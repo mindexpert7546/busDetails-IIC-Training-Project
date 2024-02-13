@@ -1,0 +1,8 @@
+import com.iinterchange.BusDetails
+
+model {
+	Iterable<BusDetails> busDetailsList
+}
+
+json tmpl.busDetails(busDetailsList ?: [])
+
