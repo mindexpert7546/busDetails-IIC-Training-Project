@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+		<style>
+			input:invalid {
+				border: 2px solid red;
+			}
+			input:valid {
+				border: 2px solid green;
+			}
+			span{
+				color:red;
+			}
+		</style>
+	</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" id="name" [(ngModel)]="signupObj.name" name="name" placeholder="Name" #signupname="ngModel" required="">
+					
+					<span *ngIf="signupname.invalid && (signupname.touched || signupname.dirty)">
+						<span *ngIf="signupname.errors?.['required']">
+							Please enter Valid Name
+						</span>
+						<span *ngIf="signupname.errors?.['pattern']">
+							Invalid  Name
+						</span>
+					   </span>
+					<input type="text" id="signup-username" [(ngModel)]="signupObj.username" name="username" #username="ngModel" placeholder="User Name" required pattern="[a-z]{4,}" >
+					<span *ngIf="username.invalid && (username.touched || username.dirty)">
+						<span *ngIf="username.errors?.['required']">
+							Username must be at least 4 characters long and contain only lowercase letters.
+						</span>
+						<span *ngIf="username.errors?.['pattern']">
+							Invalid  User Name
+						</span>
+					   </span>
+					<input type="password" id="signup-password" [(ngModel)]="signupObj.password" name="password" placeholder="Password" #password="ngModel" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}">
+					<span *ngIf="password.invalid && (password.touched || password.dirty)">
+						<span *ngIf="password.errors?.['required']">
+							Password must be at least 6 characters long, with at least one uppercase letter, one lowercase letter, one number, and one special character.
+
+						</span>
+						<span *ngIf="password.errors?.['pattern']">
+							Invalid  Password fromat
+						</span>
+					   </span>
+					<button  (click)="onSignup()">Signup</button>
+					
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="text" id="login-username" [(ngModel)]="loginObj.username" name="username" placeholder="User Name" required>
+					
+					<input type="password" id="login-password" [(ngModel)]="loginObj.password" name="password" placeholder="Password" required>
+					<button type="button" (click)="onLogin()">Login</button>
+					
+				</form>
+			</div>
+	</div>
+</body>
+</html>

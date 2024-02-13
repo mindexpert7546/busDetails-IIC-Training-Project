@@ -1,0 +1,194 @@
+<!-- <h1>Add Bus Details</h1>
+<div class="grid p-fluid d-flex justify-content-center">
+   <form #form="ngForm" (ngSubmit)="addBusDetails()">
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busNumber">Bus Number</label>
+            <input  type="number" class="form-control" id="busNumber" name="busNumber" [(ngModel)]="addBushRequest.busNumber"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="busName">Bus Name</label>
+            <input type="text" class="form-control" id="busName" name="busName" [(ngModel)]="addBushRequest.busName"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="busFrom">Bus From</label>
+            <input type="text" class="form-control" id="busFrom" name="busFrom" [(ngModel)]="addBushRequest.busFrom"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="busTo">Bus To</label>
+            <input type="text" class="form-control" id="busTo" name="busTo" [(ngModel)]="addBushRequest.busTo"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="busSeats">Bus Seats</label>
+            <input type="number" class="form-control" id="busSeats" name="busSeats" [(ngModel)]="addBushRequest.busSeats"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="coachType">Coach Type</label>
+            <input type="text" class="form-control" id="coachType" name="coachType" [(ngModel)]="addBushRequest.coachType"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="date">Date</label>
+            
+            <input  class="form-control" id="date" name="date" [(ngModel)]="addBushRequest.date"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="busPrice">Bus Price</label>
+            <input type="number" class="form-control" id="busPrice" name="busPrice" [(ngModel)]="addBushRequest.busPrice"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="ownerName">Owner Name</label>
+            <input type="text" class="form-control" id="ownerName" name="ownerName" [(ngModel)]="addBushRequest.ownerName"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <label for="ownerContact">Owner Contact</label>
+            <input type="text" class="form-control" id="ownerContact" name="ownerContact" [(ngModel)]="addBushRequest.ownerContact"/>
+        </div>
+        <div class="col-12 btn">
+            
+            <p-button  type="submit">Add Details</p-button>
+            
+        </div>
+   </form>
+</div> -->
+
+<!-- other templates  -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<div class="background-container container-css">
+    <div class="backButton d-flex justify-content-between">
+        <p></p>
+        <span class="material-symbols-outlined back-btn" (click)="backToBusList()">
+            arrow_back
+        </span>
+    </div>
+    <div class="form-container">
+       <p-card class="form-card">
+        <h2>Add Bus Details</h2>
+           <form #form="ngForm" (ngSubmit)="addBusDetails()" class="form" id="form-id">
+            <div>
+                <label>Bus Number  </label>
+                <input type="number" class="form-control" id="name" name="number" [(ngModel)]="addBushRequest.busNumber" #bNumber="ngModel" required [pattern]="'[0-9]{4,9}'">
+                <span *ngIf="bNumber.invalid && (bNumber.touched || bNumber.dirty)">
+                 <span *ngIf="bNumber.errors?.['required']">
+                     Please enter Bus Number
+                 </span>
+                 <span *ngIf="bNumber.errors?.['pattern']">
+                     Invalid Bus Number
+                 </span>
+                </span>
+             </div>
+     
+                <div>
+                    <label>Bus Name  </label>
+                    <input type="text" class="form-control" id="name" name="bname" [(ngModel)]="addBushRequest.busName" #bName="ngModel" required pattern="[A-Z a-z 0-9]{3,15}"/>
+                    <span *ngIf="bName.invalid && (bName.touched || bName.dirty)">
+                     <span *ngIf="bName.errors?.['required']">
+                         Please enter Bus Name
+                     </span>
+                     <span *ngIf="bName.errors?.['pattern']">
+                         Invalid Bus Name
+                     </span>
+                    </span>
+                 </div>
+     
+                 <div>
+                    <label>Bus From </label>
+                    <input type="text" class="form-control" id="name" name="bFrom" [(ngModel)]="addBushRequest.busFrom" #bFrom="ngModel" required pattern="[A-Z a-z]{3,10}" />
+                    <span *ngIf="bFrom.invalid && (bFrom.touched || bFrom.dirty)">
+                     <span *ngIf="bFrom.errors?.['required']">
+                         Please enter From Location
+                     </span>
+                     <span *ngIf="bFrom.errors?.['pattern']">
+                         Invalid Bus From Location
+                     </span>
+                    </span>
+                    
+                 </div>
+     
+                 <div>
+                    <label>Bus To </label>
+                    <input type="text" class="form-control" id="name" name="bTo" [(ngModel)]="addBushRequest.busTo" #bTo="ngModel" required pattern="[A-Z a-z]{3,10}"/>
+                    <span *ngIf="bTo.invalid && (bTo.touched || bTo.dirty)">
+                     <span *ngIf="bTo.errors?.['required']">
+                         Please enter To Location
+                     </span>
+                     <span *ngIf="bTo.errors?.['pattern']">
+                         Invalid Bus To Location
+                     </span>
+                    </span>
+                 </div>
+     
+                 <div>
+                    <label>Bus Seats </label>
+                    <input type="number" class="form-control" id="name" name="bSeats" [(ngModel)]="addBushRequest.busSeats" #bSeats="ngModel" required  pattern="[1-7]{1}[0-9]{0,1}"/>
+                    <span *ngIf="bSeats.invalid && (bSeats.touched || bSeats.dirty)">
+                      <span *ngIf="bSeats.errors?.['required']">
+                          Please enter Bus Seats
+                      </span>
+                      <span *ngIf="bSeats.errors?.['pattern']">
+                          Invalid  Bus Seats
+                      </span>
+                     </span>
+                  </div>
+
+                  <div>
+                    <label>Coach Type </label>
+                    <input type="text" class="form-control" id="name" name="cType" [(ngModel)]="addBushRequest.coachType" #bCoach="ngModel" required/>
+                    <span *ngIf="bCoach.invalid && (bCoach.touched || bCoach.dirty)">
+                      <span *ngIf="bCoach.errors?.['required']">
+                          Please enter Coach Type
+                      </span>
+                     
+                     </span>
+                  </div>
+
+                  <div>
+                    <label>Date </label>
+                    <input type="text" class="form-control" id="date" name="date" [(ngModel)]="addBushRequest.date"/>
+                 </div>
+
+                 <div>
+                    <label>Bus Price </label>
+                    <input type="number" class="form-control" id="name" name="bPrice" [(ngModel)]="addBushRequest.busPrice" #bPrice="ngModel" required pattern="[1-9]{1}[0-9]{0,4}"/>
+                    <span *ngIf="bPrice.invalid && (bPrice.touched || bPrice.dirty)">
+                      <span *ngIf="bPrice.errors?.['required']">
+                          Please enter Bus Price
+                      </span>
+                      <span *ngIf="bPrice.errors?.['pattern']">
+                          Invalid  Bus Price
+                      </span>
+                     </span>
+                  </div>
+                  <div>
+                    <label>Owner Name </label>
+                    <input type="text" class="form-control" id="name" name="bOwner" [(ngModel)]="addBushRequest.ownerName" #bOwner="ngModel" required pattern="[A-Z a-z]{3,15}"/>
+                    <span *ngIf="bOwner.invalid && (bOwner.touched || bOwner.dirty)">
+                      <span *ngIf="bOwner.errors?.['required']">
+                          Please enter Owner Name
+                      </span>
+                      <span *ngIf="bOwner.errors?.['pattern']">
+                          Invalid  Owner Name
+                      </span>
+                     </span>
+                  </div>
+                  <div>
+                    <label>Contact </label>
+                    <input type="text" class="form-control" id="name" name="bPhone" [(ngModel)]="addBushRequest.ownerContact" #bPhone="ngModel" required  pattern="[6-9]{1}[0-9]{9}" />&nbsp;
+                    <span *ngIf="bPhone.invalid && (bPhone.touched || bPhone.dirty)">
+                     <span *ngIf="bPhone.errors?.['required']">
+                         Please enter Phone Number
+                     </span>
+                     <span *ngIf="bPhone.errors?.['pattern']">
+                         Invalid  Phone Number
+                     </span>
+                    </span>
+             </div>
+     
+                <div class="p-field">
+                    <!-- <p-button label="Add Details" severity="primary" type="ngSubmit"></p-button> -->
+                    <input type="submit" value="Add Bus Details" [disabled]="form.invalid" class="btn btn-primary">&nbsp;
+                </div>
+           </form>
+       </p-card>
+    </div>
+    </div>

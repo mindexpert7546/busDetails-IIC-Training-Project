@@ -1,0 +1,118 @@
+<!-- <h1>Edit Bus Details</h1>
+<div  class="grid p-fluid d-flex justify-content-center">
+   <form #form="ngForm" (ngSubmit)="updateBusDetails()">
+        <div  class="col-12 md:col-6 lg:col-6 ">
+            <label for="busNumber">Bus Number</label>
+            <input type="number" class="form-control" id="busNumber" name="busNumber" [(ngModel)]="editBusDetails.busNumber"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busName">Bus Name</label>
+            <input type="text" class="form-control" id="busName" name="busName" [(ngModel)]="editBusDetails.busName"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busFrom">Bus From</label>
+            <input type="text" class="form-control" id="busFrom" name="busFrom" [(ngModel)]="editBusDetails.busFrom"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busTo">Bus To</label>
+            <input type="text" class="form-control" id="busTo" name="busTo" [(ngModel)]="editBusDetails.busTo"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busSeats">Bus Seats</label>
+            <input type="number" class="form-control" id="busSeats" name="busSeats" [(ngModel)]="editBusDetails.busSeats"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="coachType">Coach Type</label>
+            <input type="text" class="form-control" id="coachType" name="coachType" [(ngModel)]="editBusDetails.coachType"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="date">Date</label>
+            <input  class="form-control" id="date" name="date" [(ngModel)]="editBusDetails.date"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="busPrice">Bus Price</label>
+            <input type="number" class="form-control" id="busPrice" name="busPrice" [(ngModel)]="editBusDetails.busPrice"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="ownerName">Owner Name</label>
+            <input type="text" class="form-control" id="ownerName" name="ownerName" [(ngModel)]="editBusDetails.ownerName"/>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6 ">
+            <label for="ownerContact">Owner Contact</label>
+            <input type="text" class="form-control" id="ownerContact" name="ownerContact" [(ngModel)]="editBusDetails.ownerContact"/>
+        </div>
+        <div class="btn">
+            <p-button type="submit" severity="success">Update</p-button>
+        </div>
+   </form>
+</div> -->
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="background-container container-css">
+    <div class="backButton d-flex justify-content-between">
+        <p></p>
+        <span class="material-symbols-outlined back-btn" (click)="backToBusList()">
+            arrow_back
+        </span>
+    </div>
+
+    <div class="form-container">
+       <p-card class="form-card">
+        <h2>Add Bus Details</h2>
+           <form #form="ngForm" (ngSubmit)="updateBusDetails()" class="form" id="form-id">
+                <div class="p-field">
+                    <label for="id" class="field-label">Bus Number :</label> &nbsp;
+                    <input pInputText type="number" id="busNumber" readonly name="busNumber" [(ngModel)]="editBusDetails.busNumber"/>
+                </div>
+     
+                <div class="p-field">
+                    &nbsp;<label for="name" class="field-label">Bus Name :</label>&nbsp;
+                    <input pInputText type="text" id="busName" name="busName" [(ngModel)]="editBusDetails.busName"/>&nbsp;
+                </div>
+     
+                <div class="p-field">
+                    <label for="price" class="field-label">Bus From :</label>&nbsp;
+                    <input pInputText type="text" id="busFrom" name="busFrom" [(ngModel)]="editBusDetails.busFrom"/>&nbsp;
+                </div>
+     
+                <div class="p-field">
+                    <label for="age" class="field-label">Bus To :</label>&nbsp;
+                    <input pInputText type="text" id="busTo" name="busTo" [(ngModel)]="editBusDetails.busTo"/>&nbsp;
+                </div>
+     
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Bus Seats :</label>
+                    <input pInputText type="number" id="busSeats" name="busSeats" [(ngModel)]="editBusDetails.busSeats"/>&nbsp;
+                </div>
+
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Coach Type :</label>
+                    <input pInputText type="text" id="coachType" name="coachType" [(ngModel)]="editBusDetails.coachType"/>&nbsp;
+                </div>
+
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Date :</label>
+                    <input pInputText type="text" id="date" name="date" [(ngModel)]="editBusDetails.date"/>&nbsp;
+                </div>
+
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Bus Price :</label>
+                    <input pInputText type="number" id="busPrice" name="busPrice" [(ngModel)]="editBusDetails.busPrice"/>&nbsp;
+                </div>
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Owner Name :</label>
+                    <input pInputText type="text" id="ownerName" name="ownerName" [(ngModel)]="editBusDetails.ownerName"/>&nbsp;
+                </div>
+                <div class="p-field">
+                    <label for="imageurl" class="field-label">Owner Contact :</label>
+                    <input pInputText type="text" id="ownerContact" name="ownerContact" [(ngModel)]="editBusDetails.ownerContact"/>&nbsp;
+                </div>
+     
+                <div class="p-field">
+                    <p-button label="Update" severity="primary" type="ngSubmit"></p-button>
+                </div>
+           </form>
+       </p-card>
+    </div>
+    </div>

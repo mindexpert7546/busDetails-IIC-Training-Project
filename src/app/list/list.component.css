@@ -1,0 +1,113 @@
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ .container-css{
+    width: 95%;
+    margin: 20px auto;
+ }
+ 
+ .logout-btn{
+   color: rgb(7, 0, 0);
+   border-radius: 5px;
+   border: 1px solid black;
+   background-color: rgb(255, 254, 254);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 37px;
+   cursor: pointer;
+ }
+ 
+ .basDetails >h1{
+   color: white;
+ }
+
+ .eachsectionborder{
+   width: 100%;
+   min-height: 2px;
+   background-color: rgba(1, 13, 15, 0.39);
+}
+.reasonButton {
+   background-color: #04f3d2 !important;
+}
+.dataselect >label{
+   font-size: 19px;
+   color: white;
+}
+.searchdataselect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .searchdataselect .dataselect >select{
+    width: 238px;
+    height: 49px;
+ }
+
+ .search_reset_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 10px;
+ }
+
+ .search_reset_btn .search-btn{
+    margin: 5px;
+    border: 1px solid #04f3d2;
+ }
+
+ .search_reset_btn .search-btn button{
+    width: 100px;
+    height: 44px;
+ }
+ .search_reset_btn .reset-btn{
+    margin: 5px;
+    border: 1px solid #04f3d2;
+ }
+
+ .search_reset_btn .reset-btn button{
+    width: 100px;
+    height: 44px;
+ }
+
+ .search_reset_btn .add-btn{
+   margin: 5px;
+   border: 1px solid #04f3d2;
+ }
+
+ .search_reset_btn .add-btn button{
+   width: 100px;
+   height: 44px;
+}
+ 
+  
+ .background-container {
+   background-image:linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),url('https://trumpwallpapers.com/wp-content/uploads/Bus-Wallpaper-20-1920x1080-1.jpg');
+   /* background-image: url('https://trumpwallpapers.com/wp-content/uploads/Bus-Wallpaper-20-1920x1080-1.jpg'); */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-color: rgba(255, 255, 255, 0.8); /* Adjust the transparency */
+   height: 100vh;
+   padding: 10px;
+   font-size: 14px; /* Adjust font size */
+ }
+
+
+ .list{
+   opacity: 0.8;
+ }
+.busData >td{
+   padding: 20px;
+   color: black;
+
+}
+
+.dataMessage >p{
+color: rgb(252, 252, 252);
+font-size: 20px;
+}
